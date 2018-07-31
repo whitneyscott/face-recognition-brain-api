@@ -11,10 +11,8 @@ const image = require('./controllers/image');
 const db = knex({
   client: 'pg',
   connection: {
-    host : 'arcane-basin-64415',
-    user : 'postgres',
-    password : '***data_forever+++' ,
-    database : 'postgres'
+    host : process.env.DATABASE_URL,
+    ssl: true,
   }
 });
 // // having a ton of difficulty setting up db with new name, user pw
